@@ -217,7 +217,7 @@ export default function Presentation({ slides = [], onExit }) {
                     }`}
                   >
                     <span>
-                      {index + 1}. {index === 0 ? 'Consumer Friction' : 'Retailer Invisibility'}
+                      {index + 1}. {index === 0 ? 'Consumer Friction' : index === 1 ? 'Retailer Invisibility' : 'Introducing Nukaazo'}
                     </span>
                     <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded ${
                       currentIndex === index ? 'bg-[#e85c1c]/15' : 'bg-slate-100 text-slate-500'
