@@ -4,6 +4,7 @@ import Presentation from './components/presentation/Presentation';
 import ProblemStatementConsumer from './components/slides/ProblemStatementConsumer';
 import ProblemStatementRetailer from './components/slides/ProblemStatementRetailer';
 import SolutionNukaazo from './components/slides/SolutionNukaazo';
+import HowNukaazoWorks from './components/slides/HowNukaazoWorks';
 
 function App() {
   const [view, setView] = useState('welcome');
@@ -11,7 +12,8 @@ function App() {
   const slides = [
     ProblemStatementConsumer,
     ProblemStatementRetailer,
-    SolutionNukaazo
+    SolutionNukaazo,
+    HowNukaazoWorks
   ];
 
 
