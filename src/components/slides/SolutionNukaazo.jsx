@@ -98,7 +98,7 @@ export default function SolutionNukaazo() {
 
         {/* ── Main Bridge Graphic & Column Flow ── */}
         <div className="relative flex-1 max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-6 my-auto py-4">
-          
+
           {/* SVG Bridge Layer - Only shown on Desktop */}
           <div className="absolute inset-0 pointer-events-none hidden lg:block z-0">
             <svg className="w-full h-full" viewBox="0 0 1000 300" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,49 +127,49 @@ export default function SolutionNukaazo() {
               <line x1="490" y1="90" x2="490" y2="280" stroke="#cbd5e1" strokeWidth="2.5" />
               <line x1="510" y1="90" x2="510" y2="280" stroke="#cbd5e1" strokeWidth="2.5" />
               <line x1="480" y1="180" x2="520" y2="180" stroke="#cbd5e1" strokeWidth="1.5" />
-              
+
               {/* Horizontal bridge deck (the baseline connection road) */}
-              <path 
-                d="M 140,180 L 860,180" 
-                stroke="url(#bridge-gradient)" 
-                strokeWidth="4" 
-                strokeLinecap="round" 
+              <path
+                d="M 140,180 L 860,180"
+                stroke="url(#bridge-gradient)"
+                strokeWidth="4"
+                strokeLinecap="round"
               />
-              <path 
-                d="M 140,180 L 860,180" 
-                stroke="#fff" 
-                strokeWidth="1.5" 
-                strokeDasharray="4 4" 
-                strokeOpacity="0.6" 
+              <path
+                d="M 140,180 L 860,180"
+                stroke="#fff"
+                strokeWidth="1.5"
+                strokeDasharray="4 4"
+                strokeOpacity="0.6"
               />
 
               {/* Left Suspension Cable Arch (Consumer -> Nukaazo) */}
-              <path 
-                d="M 140,180 Q 320,80 500,80" 
-                stroke="#e2e8f0" 
-                strokeWidth="3.5" 
-                fill="none" 
+              <path
+                d="M 140,180 Q 320,80 500,80"
+                stroke="#e2e8f0"
+                strokeWidth="3.5"
+                fill="none"
               />
-              <path 
-                d="M 140,180 Q 320,80 500,80" 
-                stroke="url(#cable-left)" 
-                strokeWidth="2" 
-                fill="none" 
+              <path
+                d="M 140,180 Q 320,80 500,80"
+                stroke="url(#cable-left)"
+                strokeWidth="2"
+                fill="none"
                 opacity="0.3"
               />
 
               {/* Right Suspension Cable Arch (Retailer -> Nukaazo) */}
-              <path 
-                d="M 860,180 Q 680,80 500,80" 
-                stroke="#e2e8f0" 
-                strokeWidth="3.5" 
-                fill="none" 
+              <path
+                d="M 860,180 Q 680,80 500,80"
+                stroke="#e2e8f0"
+                strokeWidth="3.5"
+                fill="none"
               />
-              <path 
-                d="M 860,180 Q 680,80 500,80" 
-                stroke="url(#cable-right)" 
-                strokeWidth="2" 
-                fill="none" 
+              <path
+                d="M 860,180 Q 680,80 500,80"
+                stroke="url(#cable-right)"
+                strokeWidth="2"
+                fill="none"
                 opacity="0.3"
               />
 
@@ -189,33 +189,33 @@ export default function SolutionNukaazo() {
               <line x1="560" y1="90" x2="560" y2="180" stroke="#e2e8f0" strokeWidth="1" />
 
               {/* Animated Demand Flow: Consumer -> Center (pulses orange) */}
-              <path 
-                d="M 140,180 Q 320,80 500,80" 
-                stroke="#e85c1c" 
-                strokeWidth="3.5" 
+              <path
+                d="M 140,180 Q 320,80 500,80"
+                stroke="#e85c1c"
+                strokeWidth="3.5"
                 strokeLinecap="round"
-                fill="none" 
+                fill="none"
                 className={hoveredZone === 'consumer' || hoveredZone === 'nukaazo' ? 'animate-flow-demand-fast glow-active' : 'animate-flow-demand'}
               />
 
               {/* Animated Supply Flow: Retailer -> Center (pulses teal) */}
-              <path 
-                d="M 860,180 Q 680,80 500,80" 
-                stroke="#006363" 
-                strokeWidth="3.5" 
+              <path
+                d="M 860,180 Q 680,80 500,80"
+                stroke="#006363"
+                strokeWidth="3.5"
                 strokeLinecap="round"
-                fill="none" 
+                fill="none"
                 className={hoveredZone === 'retailer' || hoveredZone === 'nukaazo' ? 'animate-flow-supply-fast glow-active-teal' : 'animate-flow-supply'}
               />
 
               {/* Animated Direct Deck Match Flow: Left <-> Right */}
-              <path 
-                d="M 140,180 L 860,180" 
-                stroke="url(#flow-gradient)" 
-                strokeWidth="2" 
+              <path
+                d="M 140,180 L 860,180"
+                stroke="url(#flow-gradient)"
+                strokeWidth="2"
                 fill="none"
                 opacity="0.75"
-                className="animate-flow-demand" 
+                className="animate-flow-demand"
                 style={{ animationDuration: hoveredZone ? '1.5s' : '4s' }}
               />
 
@@ -223,20 +223,18 @@ export default function SolutionNukaazo() {
           </div>
 
           {/* ── Left Column: Consumer Demand (28% width) ── */}
-          <div 
+          <div
             onMouseEnter={() => setHoveredZone('consumer')}
             onMouseLeave={() => setHoveredZone(null)}
-            className={`w-full lg:w-[28%] bg-white border rounded-2xl p-5 transition-all duration-300 relative z-10 flex flex-col justify-between ${
-              hoveredZone === 'consumer' 
-                ? 'border-[#e85c1c]/50 shadow-xl shadow-[#e85c1c]/5 translate-y-[-4px]' 
-                : 'border-slate-200/50 shadow-md'
-            }`}
+            className={`w-full lg:w-[28%] bg-white border rounded-2xl p-5 transition-all duration-300 relative z-10 flex flex-col justify-between ${hoveredZone === 'consumer'
+              ? 'border-[#e85c1c]/50 shadow-xl shadow-[#e85c1c]/5 translate-y-[-4px]'
+              : 'border-slate-200/50 shadow-md'
+              }`}
           >
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-slate-100 pb-3 mb-4">
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
-                hoveredZone === 'consumer' ? 'bg-[#e85c1c] text-white' : 'bg-[#e85c1c]/10 text-[#e85c1c]'
-              }`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${hoveredZone === 'consumer' ? 'bg-[#e85c1c] text-white' : 'bg-[#e85c1c]/10 text-[#e85c1c]'
+                }`}>
                 <FaUsers size={18} />
               </div>
               <div>
@@ -271,14 +269,13 @@ export default function SolutionNukaazo() {
             {/* Bottom Base Anchor Node */}
             <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[9px] font-bold text-[#e85c1c] tracking-widest uppercase">
               <span>DEMAND HUB</span>
-              <span className={`w-2 h-2 rounded-full bg-[#e85c1c] ${
-                hoveredZone === 'consumer' ? 'animate-ping' : ''
-              }`}></span>
+              <span className={`w-2 h-2 rounded-full bg-[#e85c1c] ${hoveredZone === 'consumer' ? 'animate-ping' : ''
+                }`}></span>
             </div>
           </div>
 
           {/* ── Center Column: Nukaazo Platform (32% width) ── */}
-          <div 
+          <div
             onMouseEnter={() => setHoveredZone('nukaazo')}
             onMouseLeave={() => setHoveredZone(null)}
             className="w-full lg:w-[32%] flex flex-col items-center relative z-10 py-6"
@@ -290,11 +287,10 @@ export default function SolutionNukaazo() {
             </div>
 
             {/* Nukaazo Medallion (Center Pylon top) */}
-            <div className={`w-20 h-20 rounded-full bg-white border-3 flex items-center justify-center shadow-lg transition-transform duration-300 relative z-20 cursor-pointer ${
-              hoveredZone === 'nukaazo' 
-                ? 'border-[#e85c1c] scale-110 shadow-xl shadow-[#e85c1c]/10' 
-                : 'border-slate-300/80'
-            }`}>
+            <div className={`w-20 h-20 rounded-full bg-white border-3 flex items-center justify-center shadow-lg transition-transform duration-300 relative z-20 cursor-pointer ${hoveredZone === 'nukaazo'
+              ? 'border-[#e85c1c] scale-110 shadow-xl shadow-[#e85c1c]/10'
+              : 'border-slate-300/80'
+              }`}>
               <NukaazoLogo width={44} height={44} fill="transparent" />
             </div>
 
@@ -305,20 +301,19 @@ export default function SolutionNukaazo() {
             </div>
 
             {/* Connected Ecosystem Card */}
-            <div className={`w-full bg-gradient-to-b from-white to-[#FCFCFA] border rounded-2xl p-5 transition-all duration-300 text-center ${
-              hoveredZone === 'nukaazo'
-                ? 'border-[#006363]/50 shadow-xl shadow-[#006363]/5 translate-y-[-4px]'
-                : 'border-slate-200/50 shadow-md'
-            }`}>
+            <div className={`w-full bg-gradient-to-b from-white to-[#FCFCFA] border rounded-2xl p-5 transition-all duration-300 text-center ${hoveredZone === 'nukaazo'
+              ? 'border-[#006363]/50 shadow-xl shadow-[#006363]/5 translate-y-[-4px]'
+              : 'border-slate-200/50 shadow-md'
+              }`}>
               <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#e85c1c]/10 to-[#006363]/10 text-slate-800 text-[10px] font-extrabold tracking-wider px-2.5 py-1 rounded-full uppercase mb-3">
                 <FaNetworkWired size={10} className="text-[#006363]" />
                 <span>Connected Local Ecosystem</span>
               </div>
-              
+
               <p className="text-slate-700 text-[11px] leading-relaxed font-bold">
                 The transaction layer mapping consumer discovery with offline merchant supply.
               </p>
-              
+
               <div className="mt-4 grid grid-cols-3 gap-2 text-[9px] font-bold text-slate-500">
                 <div className="bg-slate-100/60 rounded px-1.5 py-1 border border-slate-200/30">
                   <div className="text-[#e85c1c]">ONDC</div>
@@ -337,20 +332,18 @@ export default function SolutionNukaazo() {
           </div>
 
           {/* ── Right Column: Retailer Supply (28% width) ── */}
-          <div 
+          <div
             onMouseEnter={() => setHoveredZone('retailer')}
             onMouseLeave={() => setHoveredZone(null)}
-            className={`w-full lg:w-[28%] bg-white border rounded-2xl p-5 transition-all duration-300 relative z-10 flex flex-col justify-between ${
-              hoveredZone === 'retailer' 
-                ? 'border-[#006363]/50 shadow-xl shadow-[#006363]/5 translate-y-[-4px]' 
-                : 'border-slate-200/50 shadow-md'
-            }`}
+            className={`w-full lg:w-[28%] bg-white border rounded-2xl p-5 transition-all duration-300 relative z-10 flex flex-col justify-between ${hoveredZone === 'retailer'
+              ? 'border-[#006363]/50 shadow-xl shadow-[#006363]/5 translate-y-[-4px]'
+              : 'border-slate-200/50 shadow-md'
+              }`}
           >
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-slate-100 pb-3 mb-4">
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
-                hoveredZone === 'retailer' ? 'bg-[#006363] text-white' : 'bg-[#006363]/10 text-[#006363]'
-              }`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${hoveredZone === 'retailer' ? 'bg-[#006363] text-white' : 'bg-[#006363]/10 text-[#006363]'
+                }`}>
                 <FaStore size={18} />
               </div>
               <div>
@@ -385,9 +378,8 @@ export default function SolutionNukaazo() {
             {/* Bottom Base Anchor Node */}
             <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[9px] font-bold text-[#006363] tracking-widest uppercase">
               <span>SUPPLY HUB</span>
-              <span className={`w-2 h-2 rounded-full bg-[#006363] ${
-                hoveredZone === 'retailer' ? 'animate-ping' : ''
-              }`}></span>
+              <span className={`w-2 h-2 rounded-full bg-[#006363] ${hoveredZone === 'retailer' ? 'animate-ping' : ''
+                }`}></span>
             </div>
           </div>
 
@@ -398,7 +390,7 @@ export default function SolutionNukaazo() {
           <p className="text-slate-700 text-xs md:text-sm font-bold leading-relaxed">
             Nukaazo is building the missing bridge between consumers seeking trusted local options and businesses seeking digital demand —{' '}
             <span className="text-[#006363] font-black uppercase tracking-wide">
-              creating a unified local commerce ecosystem.
+              creating a unified local Ecommerce ecosystem.
             </span>
           </p>
         </div>
