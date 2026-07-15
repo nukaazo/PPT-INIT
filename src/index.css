@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --theme-primary: #e85c1c;
+  --theme-secondary: #006363;
+  --theme-font-family-logo: 'Quicksand';
+}
+
+@theme {
+  /* Brand colors from ThemeProvider.tsx */
+  --color-brand-primary: #e85c1c;          /* Nukaazo orange */
+  --color-brand-primary-hover: #d24f16;
+  --color-brand-secondary: #006363;        /* Nukaazo teal */
+  --color-brand-accent: #ff8c42;           /* Light orange */
+  --color-brand-faded-primary: #fdf2ed;
+  --color-brand-faded-secondary: #F4FBFB;
+
+  /* Backgrounds & surfaces */
+  --color-brand-bg-light: #FCFCFA;
+  --color-brand-bg-dark: #0f1717;
+  --color-brand-surface: #ffffff;
+  --color-brand-border: #eaecef;
+
+  /* Texts */
+  --color-brand-text-primary: #111827;
+  --color-brand-text-secondary: #374151;
+  --color-brand-text-muted: #9ca3af;
+  --color-brand-text-inverse: #ffffff;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-title: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-logo: 'Quicksand', system-ui, -apple-system, sans-serif;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Base Styles */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-bg-light);
+  color: var(--color-brand-text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
