@@ -92,7 +92,7 @@ export default function SolutionNukaazo() {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold font-title text-slate-900 tracking-tight leading-tight">
-            Introducing Nukaazo — The Local Commerce Network
+            Introducing Nukaazo — The Local Ecommerce Network
           </h2>
         </div>
 
