@@ -7,6 +7,7 @@ import SolutionNukaazo from './components/slides/SolutionNukaazo';
 import HowNukaazoWorks from './components/slides/HowNukaazoWorks';
 import MarketValidation from './components/slides/MarketValidation';
 import GrowthSignals from './components/slides/GrowthSignals';
+import DataIntelligence from './components/slides/DataIntelligence';
 
 function App() {
   const [view, setView] = useState('welcome');
@@ -17,7 +18,8 @@ function App() {
     SolutionNukaazo,
     HowNukaazoWorks,
     MarketValidation,
-    GrowthSignals
+    GrowthSignals,
+    DataIntelligence
   ];
 
 

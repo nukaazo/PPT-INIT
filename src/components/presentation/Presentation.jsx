@@ -11,6 +11,16 @@ import {
 } from 'react-icons/fa';
 import NukaazoLogo from '../../lib/NukaazoLogo';
 
+const slideTitles = {
+  ProblemStatementConsumer: 'Consumer Friction',
+  ProblemStatementRetailer: 'Retailer Invisibility',
+  SolutionNukaazo: 'Introducing Nukaazo',
+  HowNukaazoWorks: 'How Nukaazo Works',
+  MarketValidation: 'Our Market Validation',
+  GrowthSignals: 'Growth Signals',
+  DataIntelligence: 'Data Intelligence & Insights'
+};
+
 export default function Presentation({ slides = [], onExit }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showOutline, setShowOutline] = useState(false);
@@ -217,7 +227,7 @@ export default function Presentation({ slides = [], onExit }) {
                     }`}
                   >
                     <span>
-                      {index + 1}. {index === 0 ? 'Consumer Friction' : index === 1 ? 'Retailer Invisibility' : index === 2 ? 'Introducing Nukaazo' : index === 3 ? 'How Nukaazo Works' : index === 4 ? 'Our Market Validation' : 'Growth Signals'}
+                      {index + 1}. {slideTitles[slides[index].name] || slides[index].name || 'Slide'}
                     </span>
                     <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded ${
                       currentIndex === index ? 'bg-[#e85c1c]/15' : 'bg-slate-100 text-slate-500'
