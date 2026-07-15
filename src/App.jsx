@@ -5,6 +5,8 @@ import ProblemStatementConsumer from './components/slides/ProblemStatementConsum
 import ProblemStatementRetailer from './components/slides/ProblemStatementRetailer';
 import SolutionNukaazo from './components/slides/SolutionNukaazo';
 import HowNukaazoWorks from './components/slides/HowNukaazoWorks';
+import MarketValidation from './components/slides/MarketValidation';
+import GrowthSignals from './components/slides/GrowthSignals';
 
 function App() {
   const [view, setView] = useState('welcome');
@@ -13,7 +15,9 @@ function App() {
     ProblemStatementConsumer,
     ProblemStatementRetailer,
     SolutionNukaazo,
-    HowNukaazoWorks
+    HowNukaazoWorks,
+    MarketValidation,
+    GrowthSignals
   ];
 
 
