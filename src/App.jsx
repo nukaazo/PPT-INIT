@@ -9,6 +9,8 @@ import MarketValidation from './components/slides/MarketValidation';
 import GrowthSignals from './components/slides/GrowthSignals';
 import DataIntelligence from './components/slides/DataIntelligence';
 import NukaazoProxy from './components/slides/NukaazoProxy';
+import GrowthRoadmap from './components/slides/GrowthRoadmap';
+import FinancialMilestones from './components/slides/FinancialMilestones';
 
 function App() {
   const [view, setView] = useState('welcome');
@@ -21,7 +23,9 @@ function App() {
     MarketValidation,
     GrowthSignals,
     DataIntelligence,
-    NukaazoProxy
+    NukaazoProxy,
+    GrowthRoadmap,
+    FinancialMilestones
   ];
 
 

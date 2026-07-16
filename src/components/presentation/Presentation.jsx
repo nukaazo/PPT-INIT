@@ -18,7 +18,10 @@ const slideTitles = {
   HowNukaazoWorks: 'How Nukaazo Works',
   MarketValidation: 'Our Market Validation',
   GrowthSignals: 'Growth Signals',
-  DataIntelligence: 'Data Intelligence & Insights'
+  DataIntelligence: 'Data Intelligence & Insights',
+  NukaazoProxy: 'Strategic Brand Growth Assets',
+  GrowthRoadmap: 'Growth Roadmap & Milestones',
+  FinancialMilestones: 'Projections & Growth Milestones'
 };
 
 export default function Presentation({ slides = [], onExit }) {
