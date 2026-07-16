@@ -11,6 +11,7 @@ import DataIntelligence from './components/slides/DataIntelligence';
 import NukaazoProxy from './components/slides/NukaazoProxy';
 import GrowthRoadmap from './components/slides/GrowthRoadmap';
 import FinancialMilestones from './components/slides/FinancialMilestones';
+import InvestmentAsk from './components/slides/InvestmentAsk';
 
 function App() {
   const [view, setView] = useState('welcome');
@@ -25,7 +26,8 @@ function App() {
     DataIntelligence,
     NukaazoProxy,
     GrowthRoadmap,
-    FinancialMilestones
+    FinancialMilestones,
+    InvestmentAsk
   ];
 
 

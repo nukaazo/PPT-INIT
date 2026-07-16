@@ -65,7 +65,7 @@ export default function GrowthRoadmap() {
 
       {/* ── Gantt Chart Container (Full Width) ── */}
       <div className="relative z-10 flex-1 flex flex-col bg-white border border-slate-200 rounded-2xl p-6 md:p-8 my-5 justify-between shadow-sm">
-        
+
         {/* Gantt Header */}
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center gap-2">
@@ -83,7 +83,7 @@ export default function GrowthRoadmap() {
             {/* Highlight 6-month Milestone line */}
             <div className="w-[25%] border-l-2 border-dashed border-teal-500/60 relative">
               {/* Milestone Marker tooltip */}
-              <div className="absolute -top-3 -left-[50px] bg-teal-600 text-white font-extrabold text-[9px] px-2 py-0.5 rounded shadow-sm uppercase tracking-wider z-20">
+              <div className="absolute -top-5 -left-[50px] bg-teal-600 text-white font-extrabold text-[9px] px-2 py-0.5 rounded shadow-sm uppercase tracking-wider z-20">
                 6M Milestone
               </div>
             </div>
@@ -183,6 +183,25 @@ export default function GrowthRoadmap() {
                   <span className="text-[9.5px] font-bold truncate">Phase 2: B2B Predictive Engine (What, Where & When to Sell)</span>
                   <span className="text-[8px] font-black uppercase text-indigo-700 bg-indigo-500/10 px-1.5 py-0.5 rounded">Phase 2 (Q3-Q4)</span>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 5: Dark Store (Fulfillment & Logistics) */}
+          <div className="grid grid-cols-12 items-center py-3 border-b border-slate-100/80 z-10 relative">
+            <div className="col-span-3 flex items-center gap-2 pl-3">
+              <div className="w-6 h-6 rounded bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
+                <FaBoxOpen size={12} />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[11px] font-bold text-slate-700 leading-tight">Dark Store Hubs</span>
+                <span className="text-[8.5px] text-slate-400 font-bold uppercase">Micro-Fulfillment</span>
+              </div>
+            </div>
+            <div className="col-span-9 relative h-6 flex items-center">
+              <div className="absolute left-[50%] w-[50%] h-5 bg-orange-500/10 border border-orange-500/20 rounded-md flex items-center justify-between px-3 text-orange-950">
+                <span className="text-[9.5px] font-bold truncate">Dark Store: Micro-warehouses & B2B delivery</span>
+                <span className="text-[8px] font-black uppercase text-orange-700 bg-orange-500/15 px-1.5 py-0.5 rounded shrink-0 ml-2">M7-M12</span>
               </div>
             </div>
           </div>

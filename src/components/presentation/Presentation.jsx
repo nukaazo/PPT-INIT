@@ -21,7 +21,8 @@ const slideTitles = {
   DataIntelligence: 'Data Intelligence & Insights',
   NukaazoProxy: 'Strategic Brand Growth Assets',
   GrowthRoadmap: 'Growth Roadmap & Milestones',
-  FinancialMilestones: 'Projections & Growth Milestones'
+  FinancialMilestones: 'Projections & Growth Milestones',
+  InvestmentAsk: 'Funding & Capital Ask'
 };
 
 export default function Presentation({ slides = [], onExit }) {
