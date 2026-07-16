@@ -47,7 +47,7 @@ export default function GrowthRoadmap() {
         <div>
           <div className="inline-flex items-center gap-2 mb-1.5">
             <span className="text-[11px] font-extrabold tracking-widest text-[#e85c1c] uppercase">
-              09 / GROWTH ROADMAP
+              10 / GROWTH ROADMAP
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">

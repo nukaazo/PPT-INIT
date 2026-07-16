@@ -69,7 +69,7 @@ export default function GrowthSignals() {
       <div className="relative z-10">
         <div className="inline-flex items-center gap-2 mb-1">
           <span className="text-[11px] font-extrabold tracking-widest text-[#006363] uppercase">
-            06 / PROOF OF MARKET
+            07 / PROOF OF MARKET
           </span>
           <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
           <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">

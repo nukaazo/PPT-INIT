@@ -510,7 +510,7 @@ export default function DataIntelligence() {
       <div className="relative z-10">
         <div className="inline-flex items-center gap-2 mb-1">
           <span className="text-[13px] font-extrabold tracking-widest text-[#006363] uppercase">
-            07 / DATA & INTELLIGENCE
+            08 / DATA & INTELLIGENCE
           </span>
           <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
           <span className="text-[12px] text-slate-400 font-bold uppercase tracking-wider">

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  FaArrowLeft, 
-  FaArrowRight, 
-  FaExpand, 
-  FaCompress, 
-  FaTimes, 
-  FaListUl, 
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaExpand,
+  FaCompress,
+  FaTimes,
+  FaListUl,
   FaKeyboard,
   FaHome
 } from 'react-icons/fa';
@@ -22,6 +22,7 @@ const slideTitles = {
   NukaazoProxy: 'Strategic Brand Growth Assets',
   GrowthRoadmap: 'Growth Roadmap & Milestones',
   FinancialMilestones: 'Projections & Growth Milestones',
+  Team: 'Who We Are',
   InvestmentAsk: 'Funding & Capital Ask'
 };
 
@@ -91,17 +92,17 @@ export default function Presentation({ slides = [], onExit }) {
   const ActiveSlideComponent = slides[currentIndex];
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className="min-h-screen w-full flex flex-col justify-between bg-[#FCFCFA] relative overflow-hidden select-none"
     >
-      
+
       {/* ── Background Grid Pattern ── */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[radial-gradient(#006363_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
 
       {/* ── Top Indicator Progress Bar ── */}
       <div className="absolute top-0 left-0 w-full h-[4px] bg-slate-100/50 z-35">
-        <div 
+        <div
           className="h-full bg-gradient-to-r from-[#e85c1c] to-[#006363] transition-all duration-300 ease-out"
           style={{ width: `${((currentIndex + 1) / slides.length) * 100}%` }}
         ></div>
@@ -117,16 +118,15 @@ export default function Presentation({ slides = [], onExit }) {
 
       {/* ── Floating Control Deck (Classy, Flat, No Shadow) ── */}
       <div className="absolute bottom-6 right-8 z-30 flex items-center gap-2 bg-white/90 border border-slate-200/60 rounded-full px-4 py-2 select-none">
-        
+
         {/* Previous Button */}
         <button
           onClick={prevSlide}
           disabled={currentIndex === 0}
-          className={`p-1.5 rounded-full transition-colors cursor-pointer ${
-            currentIndex === 0 
-              ? 'text-slate-300 cursor-not-allowed' 
-              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
-          }`}
+          className={`p-1.5 rounded-full transition-colors cursor-pointer ${currentIndex === 0
+            ? 'text-slate-300 cursor-not-allowed'
+            : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+            }`}
           title="Previous Slide"
         >
           <FaArrowLeft size={12} />
@@ -150,7 +150,7 @@ export default function Presentation({ slides = [], onExit }) {
         <span className="w-[1px] h-3 bg-slate-200 mx-1"></span>
 
         {/* Outline Menu */}
-        <button 
+        <button
           onClick={() => setShowOutline(!showOutline)}
           className="p-1.5 rounded-full text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors cursor-pointer"
           title="Slide Outline"
@@ -159,7 +159,7 @@ export default function Presentation({ slides = [], onExit }) {
         </button>
 
         {/* Shortcuts */}
-        <button 
+        <button
           onClick={() => setShowShortcutTip(!showShortcutTip)}
           className="p-1.5 rounded-full text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors cursor-pointer"
           title="Shortcuts"
@@ -197,7 +197,7 @@ export default function Presentation({ slides = [], onExit }) {
             <div>
               <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
                 <h3 className="font-title font-bold text-slate-800 text-lg">Outline</h3>
-                <button 
+                <button
                   onClick={() => setShowOutline(false)}
                   className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-all cursor-pointer"
                 >
@@ -224,18 +224,16 @@ export default function Presentation({ slides = [], onExit }) {
                       setCurrentIndex(index);
                       setShowOutline(false);
                     }}
-                    className={`w-full text-left p-3 rounded-xl border transition-all text-xs font-semibold flex items-center justify-between cursor-pointer ${
-                      currentIndex === index 
-                        ? 'border-[#e85c1c] bg-[#e85c1c]/5 text-[#e85c1c] font-bold' 
-                        : 'border-slate-100 hover:border-slate-200 text-slate-600 hover:bg-slate-50'
-                    }`}
+                    className={`w-full text-left p-3 rounded-xl border transition-all text-xs font-semibold flex items-center justify-between cursor-pointer ${currentIndex === index
+                      ? 'border-[#e85c1c] bg-[#e85c1c]/5 text-[#e85c1c] font-bold'
+                      : 'border-slate-100 hover:border-slate-200 text-slate-600 hover:bg-slate-50'
+                      }`}
                   >
                     <span>
                       {index + 1}. {slideTitles[slides[index].name] || slides[index].name || 'Slide'}
                     </span>
-                    <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded ${
-                      currentIndex === index ? 'bg-[#e85c1c]/15' : 'bg-slate-100 text-slate-500'
-                    }`}>
+                    <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded ${currentIndex === index ? 'bg-[#e85c1c]/15' : 'bg-slate-100 text-slate-500'
+                      }`}>
                       Active
                     </span>
                   </button>
@@ -256,7 +254,7 @@ export default function Presentation({ slides = [], onExit }) {
       {showShortcutTip && (
         <div className="absolute inset-0 bg-slate-900/20 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl p-6 max-w-sm w-full border border-slate-100 shadow-sm relative">
-            <button 
+            <button
               onClick={() => setShowShortcutTip(false)}
               className="absolute right-4 top-4 p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-50 cursor-pointer"
             >
@@ -266,7 +264,7 @@ export default function Presentation({ slides = [], onExit }) {
               <FaKeyboard className="text-[#e85c1c]" />
               <h3 className="font-title font-bold text-slate-800 text-base">Keyboard Shortcuts</h3>
             </div>
-            
+
             <div className="space-y-3">
               <div className="flex justify-between items-center text-xs">
                 <span className="text-slate-500">Next Slide</span>

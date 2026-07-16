@@ -48,7 +48,7 @@ export default function InvestmentAsk() {
         <div>
           <div className="inline-flex items-center gap-2 mb-1.5">
             <span className="text-[11px] font-extrabold tracking-widest text-[#e85c1c] uppercase">
-              11 / CAPITAL REQUEST
+              12 / CAPITAL REQUEST
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">

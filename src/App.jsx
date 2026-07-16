@@ -11,6 +11,7 @@ import DataIntelligence from './components/slides/DataIntelligence';
 import NukaazoProxy from './components/slides/NukaazoProxy';
 import GrowthRoadmap from './components/slides/GrowthRoadmap';
 import FinancialMilestones from './components/slides/FinancialMilestones';
+import Team from './components/slides/Team';
 import InvestmentAsk from './components/slides/InvestmentAsk';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     ProblemStatementRetailer,
     SolutionNukaazo,
     HowNukaazoWorks,
+    Team,
     MarketValidation,
     GrowthSignals,
     DataIntelligence,
