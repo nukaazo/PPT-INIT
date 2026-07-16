@@ -271,6 +271,11 @@ export default function HowNukaazoWorks() {
           </p>
         </div>
 
+        {/* ── Slide Footer ── */}
+        <div className="relative z-10 flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-wider pt-2.5 border-t border-slate-100 mt-4 select-none shrink-0">
+          <span>Product Flow &amp; Local Order Lifecycle</span>
+          <span className="text-[#e85c1c]">Nukaazo Presentation</span>
+        </div>
       </div>
     </div>
   );

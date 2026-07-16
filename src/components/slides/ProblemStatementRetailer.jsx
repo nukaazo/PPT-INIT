@@ -1,13 +1,14 @@
 import React from 'react';
 import retailerPainImg from '../../assets/retailer_pain.png';
 import NukaazoLogo from '../../lib/NukaazoLogo';
-import {
-  FaUserSlash,
-  FaWalking,
-  FaCogs,
-  FaBoxes,
-  FaStoreSlash,
+import { 
+  FaUserSlash, 
+  FaWalking, 
+  FaCogs, 
+  FaBoxes, 
+  FaStoreSlash, 
   FaChartLine,
+  FaExclamationTriangle,
   FaSignal
 } from 'react-icons/fa';
 
@@ -46,8 +47,8 @@ export default function ProblemStatementRetailer() {
   ];
 
   return (
-    <div className="w-full h-full relative grid grid-cols-1 lg:grid-cols-12 bg-[#FCFCFA] select-none overflow-hidden">
-
+    <div className="w-full h-full relative bg-[#FCFCFA] select-none overflow-hidden flex flex-col justify-between">
+      
       {/* Slide Top Section Divider Accent */}
       <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#006363] via-[#006363]/40 to-transparent z-10" />
 
@@ -72,130 +73,145 @@ export default function ProblemStatementRetailer() {
       <div className="absolute bottom-6 right-6 w-4 h-4 border-b-2 border-r-2 border-slate-300/60 pointer-events-none z-10" />
 
       {/* Watermark Logo */}
-      <div className="absolute top-[35%] left-[25%] opacity-[0.012] pointer-events-none z-0">
-        <NukaazoLogo width={350} height={350} fill="#006363" />
+      <div className="absolute bottom-8 right-10 opacity-[0.012] pointer-events-none z-0">
+        <NukaazoLogo width={180} height={180} fill="#006363" />
       </div>
 
-      {/* ── Left Column: Problem Statements ── */}
-      <div className="lg:col-span-7 flex flex-col justify-center pl-10 md:pl-16 pr-8 relative z-10 py-10">
+      {/* ── HEADER ── */}
+      <header className="relative z-10 px-12 pt-9 pb-3 shrink-0">
         <div className="flex items-center gap-2 mb-1.5 select-none">
-          <span className="text-[11px] font-extrabold tracking-widest text-[#006363] uppercase">
+          <span className="text-[9.5px] font-extrabold uppercase tracking-[0.18em] text-[#006363]">
             02 / PROBLEM STATEMENT
           </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
-            Retailer Side
-          </span>
+          <span className="w-[3px] h-[3px] rounded-full bg-slate-300" />
+          <span className="text-[9.5px] text-slate-400 font-semibold uppercase tracking-[0.14em]">Retailer Side</span>
         </div>
-        <h2 className="text-3xl md:text-[28px] font-extrabold font-title text-slate-900 tracking-tight leading-tight mb-5">
+        <h2 className="text-[24px] font-extrabold text-slate-900 tracking-tight leading-tight font-title">
           Broken Access to Digital Demand
         </h2>
+      </header>
 
-        {/* Timeline Path of Friction Cards */}
-        <div className="relative space-y-3.5 pl-4 border-l border-slate-200/50">
-          {problems.map((p, idx) => {
-            const Icon = p.icon;
-            return (
-              <div key={idx} className="relative group">
+      {/* ── BODY ── */}
+      <main className="relative z-10 flex-1 min-h-0 px-12 pb-5 flex flex-col justify-center">
+        <div className="grid grid-cols-12 gap-6 items-center">
+          
+          {/* Left Column: Problem Statements */}
+          <div className="col-span-7 flex flex-col justify-center pr-2">
+            {/* Timeline Path of Friction Cards */}
+            <div className="relative space-y-3.5 pl-4 border-l border-slate-200/50">
+              {problems.map((p, idx) => {
+                const Icon = p.icon;
+                return (
+                  <div key={idx} className="relative group">
+                    
+                    {/* Timeline node icon */}
+                    <div 
+                      className="absolute -left-[29px] top-1.5 w-6 h-6 rounded-full flex items-center justify-center border shadow-sm transition-all duration-300 group-hover:scale-105 z-10"
+                      style={{ 
+                        color: '#006363',
+                        backgroundColor: '#FCFCFA',
+                        borderColor: '#00636340'
+                      }}
+                    >
+                      <Icon size={10} />
+                    </div>
 
-                {/* Timeline node icon */}
-                <div
-                  className="absolute -left-[29px] top-1.5 w-6 h-6 rounded-full flex items-center justify-center border shadow-sm transition-all duration-300 group-hover:scale-105 z-10"
-                  style={{
-                    color: '#006363',
-                    backgroundColor: '#FCFCFA',
-                    borderColor: '#00636340'
-                  }}
-                >
-                  <Icon size={10} />
-                </div>
+                    {/* Glass Card */}
+                    <div className="bg-white/80 backdrop-blur-md rounded-xl p-3 pl-4 border border-slate-200/50 hover:border-slate-300 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col gap-1 relative overflow-hidden">
+                      
+                      {/* Subtle top-right gradient pattern */}
+                      <div 
+                        className="absolute top-0 right-0 w-24 h-24 pointer-events-none -mr-4 -mt-4 transition-transform duration-500 rounded-bl-full"
+                        style={{ 
+                          background: `radial-gradient(circle at top right, #00636312, transparent 70%)` 
+                        }} 
+                      />
 
-                {/* Glass Card */}
-                <div className="bg-white/80 backdrop-blur-md rounded-xl p-3 pl-4 border border-slate-200/50 hover:border-slate-300 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col gap-1 relative overflow-hidden">
-
-                  {/* Subtle top-right gradient pattern */}
-                  <div
-                    className="absolute top-0 right-0 w-24 h-24 pointer-events-none -mr-4 -mt-4 transition-transform duration-500 rounded-bl-full"
-                    style={{
-                      background: `radial-gradient(circle at top right, #00636312, transparent 70%)`
-                    }}
-                  />
-
-                  <h4 className="font-extrabold text-slate-800 text-[13.5px] leading-snug italic font-title relative z-10">
-                    {p.quote}
-                  </h4>
-                  <p className="text-slate-500 text-[11px] leading-relaxed font-medium relative z-10">
-                    {p.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* ── Right Column: Captioned Image Panel & Core problem callout ── */}
-      <div className="lg:col-span-5 bg-slate-50/20 border-l border-slate-200/40 flex flex-col justify-center gap-5 relative z-10 py-10 px-8 select-none">
-
-        {/* Subtle dot pattern */}
-        <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[radial-gradient(#006363_1px,transparent_1px)] [background-size:16px_16px]"></div>
-
-        {/* Captioned Polaroid/Keynote Style Card (Scale Matched to Slide 1) */}
-        <div className="w-full max-w-[260px] bg-white rounded-3xl border border-slate-200/50 shadow-md hover:shadow-lg p-2.5 flex flex-col gap-3 transition-shadow duration-500 mx-auto">
-
-          {/* Retailer Pain Illustration (100% visible) */}
-          <div className="w-full aspect-square rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 flex items-center justify-center">
-            <img
-              src={retailerPainImg}
-              alt="Retailer Pain Illustration"
-              className="w-full h-full object-cover opacity-90"
-            />
-          </div>
-
-          {/* Integrated Light Caption Panel */}
-          <div className="px-1.5 pb-2 text-left select-none">
-            <div className="flex items-center gap-1.5 mb-1.5">
-              <FaSignal className="text-[#006363]" size={11} />
-              <span className="text-[8.5px] font-black uppercase tracking-widest text-[#006363]">Retailer Insight</span>
+                      <h4 className="font-extrabold text-slate-800 text-[13.5px] leading-snug italic font-title relative z-10">
+                        {p.quote}
+                      </h4>
+                      <p className="text-slate-500 text-[11px] leading-relaxed font-medium relative z-10">
+                        {p.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <h5 className="text-[12px] font-bold text-slate-800 tracking-tight leading-none">
-              &lt; 5% Digital Discoverability
-            </h5>
-            <p className="text-slate-400 text-[9px] font-semibold mt-1 leading-normal">
-              Local merchants rely strictly on physical walk-ins due to high setup barriers.
-            </p>
+          </div>
+
+          {/* Right Column: Captioned Image Panel & Core problem callout */}
+          <div className="col-span-5 flex flex-col justify-center gap-5 relative py-2 select-none">
+            
+            {/* Captioned Polaroid/Keynote Style Card (Scale Matched to Slide 1) */}
+            <div className="w-full max-w-[260px] bg-white rounded-3xl border border-slate-200/50 shadow-md hover:shadow-lg p-2.5 flex flex-col gap-3 transition-shadow duration-500 mx-auto">
+              
+              {/* Retailer Pain Illustration (100% visible) */}
+              <div className="w-full aspect-square rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 flex items-center justify-center">
+                <img 
+                  src={retailerPainImg} 
+                  alt="Retailer Pain Illustration" 
+                  className="w-full h-full object-cover opacity-90"
+                />
+              </div>
+
+              {/* Integrated Light Caption Panel */}
+              <div className="px-1.5 pb-2 text-left select-none">
+                <div className="flex items-center gap-1.5 mb-1.5">
+                  <FaSignal className="text-[#006363]" size={11} />
+                  <span className="text-[8.5px] font-black uppercase tracking-widest text-[#006363]">Retailer Insight</span>
+                </div>
+                <h5 className="text-[12px] font-bold text-slate-800 tracking-tight leading-none">
+                  &lt; 5% Digital Discoverability
+                </h5>
+                <p className="text-slate-400 text-[9px] font-semibold mt-1 leading-normal">
+                  Local merchants rely strictly on physical walk-ins due to high setup barriers.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Core Problem Insight Box (Text-Only, Increased Width to Balance Heights) */}
+            <div className="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-5 shadow-[0_4px_24px_rgba(0,0,0,0.02)] relative z-10 w-full max-w-[460px] mx-auto group">
+              
+              <div className="absolute top-0 right-0 w-24 h-24 pointer-events-none -mr-4 -mt-4 transition-transform duration-500 rounded-bl-full"
+                style={{ 
+                  background: `radial-gradient(circle at top right, #e85c1c0a, transparent 70%)` 
+                }} 
+              />
+
+              <h5 className="text-[10px] font-black tracking-widest text-[#e85c1c] uppercase mb-2.5">
+                Core Problem Insight
+              </h5>
+
+              <div className="space-y-2 text-slate-700 text-[11px] font-semibold leading-relaxed">
+                <ul className="list-disc pl-4">
+                  <li>Consumers are stuck without access to trusted local options.</li>
+                  <li>Businesses are stuck without access to digital demand.</li>
+                </ul>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-slate-100/80">
+                <p className="text-[#006363] text-[10px] font-black uppercase tracking-wide">
+                  The connection layer between them is missing.
+                </p>
+              </div>
+            </div>
+
           </div>
 
         </div>
+      </main>
 
-        {/* Core Problem Insight Box (Text-Only, Increased Width to Balance Heights) */}
-        <div className="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-5 shadow-[0_4px_24px_rgba(0,0,0,0.02)] relative z-10 w-full max-w-[460px] mx-auto group">
-
-          <div className="absolute top-0 right-0 w-24 h-24 pointer-events-none -mr-4 -mt-4 transition-transform duration-500 rounded-bl-full"
-            style={{
-              background: `radial-gradient(circle at top right, #e85c1c0a, transparent 70%)`
-            }}
-          />
-
-          <h5 className="text-[10px] font-black tracking-widest text-[#e85c1c] uppercase mb-2.5">
-            Core Problem Insight
-          </h5>
-
-          <div className="space-y-2 text-slate-700 text-[11px] font-semibold leading-relaxed">
-            <ul className="list-disc pl-4">
-              <li>Consumers are stuck without access to trusted local options.</li>
-              <li>Businesses are stuck without access to digital demand.</li>
-            </ul>
-          </div>
-
-          <div className="mt-4 pt-3 border-t border-slate-100/80">
-            <p className="text-[#006363] text-[10px] font-black uppercase tracking-wide">
-              The connection layer between them is missing.
-            </p>
-          </div>
-        </div>
-
-      </div>
+      {/* ── FOOTER ── */}
+      <footer className="relative z-10 px-12 py-2.5 border-t border-slate-100 flex justify-between items-center shrink-0">
+        <span className="text-[8.5px] font-bold text-slate-400 uppercase tracking-widest">
+          Retailer Reach &amp; Access Barriers
+        </span>
+        <span className="text-[8.5px] font-bold uppercase tracking-widest text-[#006363]">
+          Nukaazo Presentation
+        </span>
+      </footer>
 
     </div>
   );

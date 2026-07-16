@@ -7,9 +7,15 @@ import {
   FaTimes,
   FaListUl,
   FaKeyboard,
-  FaHome
+  FaHome,
+  FaCog,
+  FaFilePdf,
+  FaFilePowerpoint
 } from 'react-icons/fa';
 import NukaazoLogo from '../../lib/NukaazoLogo';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
+import pptxgen from 'pptxgenjs';
 
 const slideTitles = {
   ProblemStatementConsumer: 'Consumer Friction',
@@ -31,6 +37,11 @@ export default function Presentation({ slides = [], onExit }) {
   const [showOutline, setShowOutline] = useState(false);
   const [showShortcutTip, setShowShortcutTip] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+  const [exportProgress, setExportProgress] = useState(0);
+  const [exportFormat, setExportFormat] = useState('');
+  const [activeCaptureIndex, setActiveCaptureIndex] = useState(-1);
   const containerRef = useRef(null);
 
   // Keyboard navigation
@@ -88,32 +99,125 @@ export default function Presentation({ slides = [], onExit }) {
       document.exitFullscreen();
     }
   };
+  const exportSlides = async (format) => {
+    setIsExporting(true);
+    setExportProgress(0);
+    setExportFormat(format);
 
+    let pdf = null;
+    let ppt = null;
+
+    if (format === 'PDF') {
+      pdf = new jsPDF('l', 'px', [1280, 800]);
+    } else if (format === 'PPT') {
+      ppt = new pptxgen();
+      ppt.defineLayout({ name: 'LAYOUT_16x10', width: 10, height: 6.25 });
+      ppt.layout = 'LAYOUT_16x10';
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+      setActiveCaptureIndex(i);
+      
+      // Wait for rendering & assets to fully initialize
+      await new Promise((resolve) => setTimeout(resolve, 600));
+
+      const element = document.getElementById('capture-slide');
+      if (element) {
+        try {
+          const canvas = await html2canvas(element, {
+            scale: 1.5, // Retina print clarity but efficient size
+            useCORS: true,
+            backgroundColor: '#FCFCFA',
+            logging: false,
+            width: 1280,
+            height: 800
+          });
+
+          const imgData = canvas.toDataURL('image/jpeg', 0.95);
+
+          if (format === 'PDF') {
+            if (i > 0) {
+              pdf.addPage([1280, 800], 'l');
+            }
+            pdf.addImage(imgData, 'JPEG', 0, 0, 1280, 800);
+          } else if (format === 'PPT') {
+            const slide = ppt.addSlide();
+            slide.addImage({ data: imgData, x: 0, y: 0, w: 10, h: 6.25 });
+          }
+        } catch (error) {
+          console.error(`Error exporting slide ${i}:`, error);
+        }
+      }
+
+      setExportProgress(Math.round(((i + 1) / slides.length) * 100));
+    }
+
+    if (format === 'PDF') {
+      pdf.save('nukaazo-presentation.pdf');
+    } else if (format === 'PPT') {
+      ppt.writeFile({ fileName: 'nukaazo-presentation.pptx' });
+    }
+
+    setActiveCaptureIndex(-1);
+    setIsExporting(false);
+  };
   const ActiveSlideComponent = slides[currentIndex];
 
   return (
-    <div
-      ref={containerRef}
-      className="min-h-screen w-full flex flex-col justify-between bg-[#FCFCFA] relative overflow-hidden select-none"
-    >
+    <div ref={containerRef} className="relative select-none bg-[#FCFCFA]">
 
-      {/* ── Background Grid Pattern ── */}
-      <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[radial-gradient(#006363_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
+      {/* ── PDF Export Styles (Force Multi-page Landscape Printing) ── */}
+      <style>{`
+        @media print {
+          body, html, #root {
+            background: #FCFCFA !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100vw !important;
+            height: 62.5vw !important;
+            overflow: visible !important;
+          }
+          @page {
+            size: landscape;
+            margin: 0;
+          }
+          .print-slide-container {
+            display: block !important;
+          }
+          .print-slide {
+            width: 100vw !important;
+            height: 62.5vw !important;
+            page-break-after: always !important;
+            page-break-inside: avoid !important;
+            position: relative !important;
+            overflow: hidden !important;
+            background: #FCFCFA !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+        }
+      `}</style>
 
-      {/* ── Top Indicator Progress Bar ── */}
-      <div className="absolute top-0 left-0 w-full h-[4px] bg-slate-100/50 z-35">
-        <div
-          className="h-full bg-gradient-to-r from-[#e85c1c] to-[#006363] transition-all duration-300 ease-out"
-          style={{ width: `${((currentIndex + 1) / slides.length) * 100}%` }}
-        ></div>
-      </div>
+      {/* ── Screen Presenter View (Hidden During Printing) ── */}
+      <div className="print:hidden min-h-screen w-full flex flex-col justify-between bg-[#FCFCFA] relative overflow-hidden">
 
-      {/* ── Slide Frame (Borderless, Shadowless, Full Size Aspect) ── */}
-      <main className="relative z-10 flex-1 flex items-center justify-center overflow-hidden">
-        <div className="w-full h-full max-w-7xl aspect-[16/10] bg-[#FCFCFA] relative flex flex-col justify-between">
-          <ActiveSlideComponent />
+        {/* ── Background Grid Pattern ── */}
+        <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[radial-gradient(#006363_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
+
+        {/* ── Top Indicator Progress Bar ── */}
+        <div className="absolute top-0 left-0 w-full h-[4px] bg-slate-100/50 z-35">
+          <div
+            className="h-full bg-gradient-to-r from-[#e85c1c] to-[#006363] transition-all duration-300 ease-out"
+            style={{ width: `${((currentIndex + 1) / slides.length) * 100}%` }}
+          ></div>
         </div>
-      </main>
+
+        {/* ── Slide Frame (Borderless, Shadowless, Full Size Aspect) ── */}
+        <main className="relative z-10 flex-1 flex items-center justify-center overflow-hidden">
+          <div className="w-full h-full max-w-7xl aspect-[16/10] bg-[#FCFCFA] relative flex flex-col justify-between">
+            <ActiveSlideComponent />
+          </div>
+        </main>
 
 
       {/* ── Floating Control Deck (Classy, Flat, No Shadow) ── */}
@@ -175,6 +279,45 @@ export default function Presentation({ slides = [], onExit }) {
         >
           {isFullscreen ? <FaCompress size={12} /> : <FaExpand size={12} />}
         </button>
+
+        {/* Settings & Downloads Cog */}
+        <div className="relative flex items-center">
+          <button 
+            onClick={() => setShowSettings(!showSettings)}
+            className={`p-1.5 rounded-full transition-colors cursor-pointer ${showSettings ? 'bg-slate-100 text-slate-900' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+            title="Settings & Downloads"
+          >
+            <FaCog size={12} />
+          </button>
+
+          {showSettings && (
+            <div className="absolute bottom-10 right-0 w-44 bg-white border border-slate-200/60 rounded-xl shadow-xl p-2 z-50 flex flex-col gap-1 select-none">
+              <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest px-2.5 py-1 border-b border-slate-100 mb-1">
+                Export & Actions
+              </div>
+              <button 
+                onClick={() => {
+                  exportSlides('PDF');
+                  setShowSettings(false);
+                }}
+                className="w-full text-left px-2.5 py-1.5 hover:bg-slate-50 rounded-lg text-xs font-semibold text-slate-700 hover:text-slate-900 cursor-pointer flex items-center gap-2"
+              >
+                <FaFilePdf className="text-red-500" size={12} />
+                <span>Download as PDF</span>
+              </button>
+              <button 
+                onClick={() => {
+                  exportSlides('PPT');
+                  setShowSettings(false);
+                }}
+                className="w-full text-left px-2.5 py-1.5 hover:bg-slate-50 rounded-lg text-xs font-semibold text-[#e85c1c] hover:text-[#ff7c43] cursor-pointer flex items-center gap-2"
+              >
+                <FaFilePowerpoint className="text-[#e85c1c]" size={12} />
+                <span>Download as PPT</span>
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Separator */}
         <span className="w-[1px] h-3 bg-slate-200 mx-1"></span>
@@ -282,6 +425,68 @@ export default function Presentation({ slides = [], onExit }) {
           </div>
         </div>
       )}
+      {/* ── Canva-Style Export Progress Modal ── */}
+      {isExporting && (
+        <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-md z-50 flex flex-col items-center justify-center select-none text-center">
+          <div className="bg-white rounded-3xl p-8 max-w-sm w-full border border-slate-100 shadow-2xl flex flex-col items-center gap-5">
+            
+            {/* Spinner Progress Circle */}
+            <div className="relative w-16 h-16 flex items-center justify-center">
+              <div className="absolute inset-0 rounded-full border-4 border-slate-100"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-[#e85c1c] border-t-transparent animate-spin"></div>
+              <span className="text-[11px] font-black text-slate-700">{exportProgress}%</span>
+            </div>
+
+            {/* Title & Info */}
+            <div>
+              <h3 className="font-title font-extrabold text-slate-800 text-base">
+                Preparing Your Download
+              </h3>
+              <p className="text-[9px] text-[#e85c1c] font-black uppercase tracking-widest mt-1">
+                Exporting as {exportFormat}
+              </p>
+              <p className="text-[11px] text-slate-400 font-medium leading-relaxed mt-2 max-w-[220px] mx-auto">
+                Please wait a moment while Nukaazo compiles your slides.
+              </p>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden mt-1 relative">
+              <div 
+                className="h-full bg-gradient-to-r from-[#e85c1c] to-[#006363] transition-all duration-300 ease-out rounded-full"
+                style={{ width: `${exportProgress}%` }}
+              ></div>
+            </div>
+
+          </div>
+        </div>
+      )}
+
+      {/* ── Offscreen Capture Node for PDF/PPT Generators ── */}
+      {activeCaptureIndex !== -1 && (
+        <div 
+          id="capture-slide" 
+          className="fixed top-[-9999px] left-[-9999px] bg-[#FCFCFA] overflow-hidden"
+          style={{ 
+            width: '1280px', 
+            height: '800px', 
+            zIndex: -100 
+          }}
+        >
+          {React.createElement(slides[activeCaptureIndex])}
+        </div>
+      )}
+
+      </div>
+
+      {/* ── PDF Export Layout (Print Only, Multi-page Landscape) ── */}
+      <div className="hidden print:block print-slide-container">
+        {slides.map((SlideComponent, idx) => (
+          <div key={idx} className="print-slide">
+            <SlideComponent />
+          </div>
+        ))}
+      </div>
 
     </div>
   );

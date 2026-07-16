@@ -207,15 +207,13 @@ export default function MarketValidation() {
       </div>
 
       {/* ── Slide Footer Details ── */}
-      <div className="relative z-10 border-t border-slate-200/50 pt-3 flex justify-between items-center text-[9px] font-extrabold text-slate-400 tracking-widest uppercase mt-2">
+      <div className="relative z-10 flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-wider pt-2.5 border-t border-slate-100 mt-4 select-none shrink-0">
         <div className="flex items-center gap-1.5">
-          <span>Pune Operations Unit</span>
+          <span>Traction, Validation &amp; Brand Adoption</span>
           <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-          <span className="text-[#e85c1c]">Cohort 1</span>
+          <span className="text-[#e85c1c]">Cohort 1 (Pune)</span>
         </div>
-        <div>
-          <span>Nukaazo Brand deck © 2026</span>
-        </div>
+        <span className="text-[#e85c1c]">Nukaazo Presentation</span>
       </div>
 
     </div>
