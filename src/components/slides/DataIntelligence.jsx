@@ -15,7 +15,7 @@ export default function DataIntelligence() {
   const items = [
     {
       id: 0,
-      title: "Untapped Market Opportunities",
+      title: "Untapped (Leaf Node) Market Opportunities",
       subtitle: "Gaps & Dark Store Discovery",
       desc: "Machine-driven identification of high-potential retail zones and dark store locations currently unserved by distributors.",
       icon: FaSearchLocation,
@@ -399,7 +399,7 @@ export default function DataIntelligence() {
           <span className="text-[9px] text-[#e85c1c] font-bold">Purchase Volume Void</span>
         </div>
         <div className="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100">
-          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Untapped Pipeline Value</span>
+          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Untapped(Leaf Node) Pipeline Value</span>
           <div className="text-[15px] font-extrabold text-slate-800 mt-0.5">₹15L+ /Mo</div>
           <span className="text-[9px] text-slate-505 font-bold text-slate-500">Gross Addressable Opportunity</span>
         </div>
