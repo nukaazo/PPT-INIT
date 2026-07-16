@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function NukaazoLogo({ width = 48, height = 48, fill = "#ffffff" }) {
+export default function NukaazoLogo({ width = 48, height = 48, fill = "#ffffff", noBg = false }) {
   return (
     <svg width={width} height={height} viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -17,9 +17,9 @@ export default function NukaazoLogo({ width = 48, height = 48, fill = "#ffffff" 
         </filter>
       </defs>
 
-      <rect x="56" y="56" width="400" height="400" rx="90" fill={fill} />
+      {!noBg && <rect x="56" y="56" width="400" height="400" rx="90" fill={fill} />}
       
-      <g transform="translate(156, 132)">
+      <g transform={noBg ? "translate(156, 110)" : "translate(156, 132)"}>
         {/* Teal Basket Handle */}
         <path 
           d="M30 40 C 30 -20, 170 -20, 170 40" 

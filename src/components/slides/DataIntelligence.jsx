@@ -390,7 +390,7 @@ export default function DataIntelligence() {
       <div className="grid grid-cols-3 gap-3 mb-2.5">
         <div className="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100">
           <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Gaps Identified</span>
-          <div className="text-[15px] font-extrabold text-[#006363] mt-0.5">140+ Outlets</div>
+          <div className="text-[15px] font-extrabold text-[#006363] mt-0.5">30%+ Outlets</div>
           <span className="text-[9px] text-teal-600 font-bold">Unserved Retail Voids</span>
         </div>
         <div className="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100">
@@ -400,7 +400,7 @@ export default function DataIntelligence() {
         </div>
         <div className="bg-slate-50/80 rounded-xl p-2.5 border border-slate-100">
           <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Untapped(Leaf Node) Pipeline Value</span>
-          <div className="text-[15px] font-extrabold text-slate-800 mt-0.5">₹15L+ /Mo</div>
+          <div className="text-[15px] font-extrabold text-slate-800 mt-0.5">₹5L+ /Mo</div>
           <span className="text-[9px] text-slate-505 font-bold text-slate-500">Gross Addressable Opportunity</span>
         </div>
       </div>

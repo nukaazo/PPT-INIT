@@ -13,11 +13,13 @@ import GrowthRoadmap from './components/slides/GrowthRoadmap';
 import FinancialMilestones from './components/slides/FinancialMilestones';
 import Team from './components/slides/Team';
 import InvestmentAsk from './components/slides/InvestmentAsk';
+import HomeSlide from './components/slides/HomeSlide';
 
 function App() {
   const [view, setView] = useState('welcome');
 
   const slides = [
+    HomeSlide,
     ProblemStatementConsumer,
     ProblemStatementRetailer,
     SolutionNukaazo,
