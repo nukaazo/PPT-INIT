@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
-  FaUsers, 
-  FaChartLine, 
-  FaMapMarkerAlt, 
-  FaCamera, 
-  FaBrain, 
+import {
+  FaUsers,
+  FaChartLine,
+  FaMapMarkerAlt,
+  FaCamera,
+  FaBrain,
   FaLightbulb,
   FaCheckCircle
 } from 'react-icons/fa';
@@ -25,7 +25,7 @@ export default function NukaazoProxy() {
       {/* ── Slide Background Textures ── */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#006363_1px,transparent_1px),linear-gradient(to_bottom,#006363_1px,transparent_1px)] bg-[size:48px_48px] z-0"></div>
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[repeating-linear-gradient(45deg,#000,#000_1px,transparent_1px,transparent_12px)] z-0"></div>
-      
+
       {/* PPT Technical L-Shape Crop Marks */}
       <div className="absolute top-6 left-6 w-4 h-4 border-t-2 border-l-2 border-slate-300/60 pointer-events-none z-10"></div>
       <div className="absolute top-6 right-6 w-4 h-4 border-t-2 border-r-2 border-slate-300/60 pointer-events-none z-10"></div>
@@ -37,7 +37,7 @@ export default function NukaazoProxy() {
 
       {/* ── Main Layout Content ── */}
       <div className="relative z-10 flex flex-col h-full">
-        
+
         {/* Slide Header */}
         <div className="text-left mb-8">
           <div className="inline-flex items-center gap-2 mb-2">
@@ -46,7 +46,7 @@ export default function NukaazoProxy() {
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
             <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
-              Efficiency & Execution
+              What We Have
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold font-title text-slate-900 tracking-tight leading-tight">
@@ -59,11 +59,11 @@ export default function NukaazoProxy() {
 
         {/* ── Content Grid ── */}
         <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto pb-6">
-          
+
           {/* Column 1: Shared Sales Force (Spans 1 col, visually dominant) */}
           <div className="bg-gradient-to-b from-[#e85c1c]/[0.03] to-white border border-[#e85c1c]/20 rounded-2xl p-6 shadow-sm relative group hover:border-[#e85c1c]/50 transition-colors duration-300 overflow-hidden flex flex-col h-full">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#e85c1c]/10 to-transparent rounded-bl-full pointer-events-none -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-            
+
             <div className="flex items-center gap-3 mb-5 relative z-10">
               <div className="w-12 h-12 rounded-xl bg-[#e85c1c]/10 text-[#e85c1c] flex items-center justify-center">
                 <FaUsers size={22} />
@@ -87,7 +87,7 @@ export default function NukaazoProxy() {
                 <p className="text-[11px] text-slate-600 font-medium">per brand by splitting execution expenses.</p>
               </div>
             </div>
-            
+
             {/* Demand Catalyst Section */}
             <div className="mt-5 bg-white border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#006363]"></div>
@@ -103,7 +103,7 @@ export default function NukaazoProxy() {
           {/* Column 2: Hyperlocal Campaigns */}
           <div className="bg-gradient-to-b from-[#006363]/[0.03] to-white border border-[#006363]/20 rounded-2xl p-6 shadow-sm relative group hover:border-[#006363]/50 transition-colors duration-300 overflow-hidden flex flex-col h-full">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#006363]/10 to-transparent rounded-bl-full pointer-events-none -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-            
+
             <div className="flex items-center gap-3 mb-5 relative z-10">
               <div className="w-12 h-12 rounded-xl bg-[#006363]/10 text-[#006363] flex items-center justify-center">
                 <FaMapMarkerAlt size={20} />
@@ -145,7 +145,7 @@ export default function NukaazoProxy() {
           {/* Column 3: AI Recommendations */}
           <div className="bg-gradient-to-b from-indigo-50/50 to-white border border-indigo-500/20 rounded-2xl p-6 shadow-sm relative group hover:border-indigo-500/50 transition-colors duration-300 overflow-hidden flex flex-col h-full">
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-indigo-500/10 to-transparent rounded-bl-full pointer-events-none -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
-            
+
             <div className="flex items-center gap-3 mb-5 relative z-10">
               <div className="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center">
                 <FaBrain size={22} />
@@ -161,7 +161,7 @@ export default function NukaazoProxy() {
             </p>
 
             <div className="flex-1 flex flex-col justify-start">
-              
+
               <div className="flex gap-4">
                 <div className="flex flex-col items-center">
                   <div className="w-4 h-4 shrink-0 rounded-full bg-white border-2 border-indigo-400 z-10 mt-0.5"></div>
@@ -172,7 +172,7 @@ export default function NukaazoProxy() {
                   <p className="text-[11px] text-slate-500 font-medium leading-relaxed">Identifying high-velocity SKUs for specific micro-markets.</p>
                 </div>
               </div>
-              
+
               <div className="flex gap-4">
                 <div className="flex flex-col items-center">
                   <div className="w-4 h-4 shrink-0 rounded-full bg-white border-2 border-indigo-500 z-10 mt-0.5"></div>
@@ -183,7 +183,7 @@ export default function NukaazoProxy() {
                   <p className="text-[11px] text-slate-500 font-medium leading-relaxed">Timing promotions with local demand surges and seasonal trends.</p>
                 </div>
               </div>
-              
+
               <div className="flex gap-4">
                 <div className="flex flex-col items-center">
                   <div className="w-4 h-4 shrink-0 rounded-full bg-white border-2 border-indigo-600 z-10 mt-0.5"></div>
@@ -195,11 +195,11 @@ export default function NukaazoProxy() {
               </div>
 
             </div>
-            
+
             <div className="mt-auto pt-4 flex justify-end">
-               <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center shadow-sm">
-                 <FaLightbulb className="text-amber-500" size={16} />
-               </div>
+              <div className="w-10 h-10 rounded-full bg-amber-50 border border-amber-100 flex items-center justify-center shadow-sm">
+                <FaLightbulb className="text-amber-500" size={16} />
+              </div>
             </div>
 
           </div>
