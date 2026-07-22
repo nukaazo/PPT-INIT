@@ -99,11 +99,11 @@ export default function InvestmentAsk() {
               </li>
               <li className="flex items-start gap-2 text-[11px] font-semibold text-slate-650">
                 <FaCheckCircle className="text-[#006363] mt-0.5 shrink-0" size={12} />
-                <span>Acquire <strong>6,000+ active shopkeepers</strong></span>
+                <span>Acquire <strong>15,000+ active users</strong></span>
               </li>
               <li className="flex items-start gap-2 text-[11px] font-semibold text-slate-650">
                 <FaCheckCircle className="text-[#006363] mt-0.5 shrink-0" size={12} />
-                <span>Reach <strong>₹30L+ Monthly GMV Run Rate</strong></span>
+                <span>Reach <strong>₹45L+ Monthly GMV Run Rate</strong></span>
               </li>
               <li className="flex items-start gap-2 text-[11px] font-semibold text-slate-650">
                 <FaCheckCircle className="text-[#006363] mt-0.5 shrink-0" size={12} />

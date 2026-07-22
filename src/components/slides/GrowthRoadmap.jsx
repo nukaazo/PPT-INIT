@@ -110,12 +110,12 @@ export default function GrowthRoadmap() {
               {/* Bar 1: Q1-Q2 */}
               <div className="absolute left-0 w-[50%] h-7 bg-gradient-to-r from-[#e85c1c] to-[#e85c1c]/85 rounded-lg flex items-center justify-between px-3 text-white shadow-sm border border-[#e85c1c]/10">
                 <span className="text-[10px] font-extrabold truncate">Outlet & User Scaling (M1-M6 Target)</span>
-                <span className="text-[8.5px] font-black bg-white/20 px-1.5 py-0.5 rounded">2K outlets / 1.5K users</span>
+                <span className="text-[8.5px] font-black bg-white/20 px-1.5 py-0.5 rounded">2K outlets / 4.5K users</span>
               </div>
               {/* Bar 2: Q3-Q4 */}
               <div className="absolute left-[50%] w-[50%] h-7 bg-gradient-to-r from-[#e85c1c]/60 to-[#e85c1c] rounded-lg flex items-center justify-between px-3 text-white shadow-sm border border-[#e85c1c]/10">
                 <span className="text-[10px] font-extrabold truncate">Multi-City Expansion & Replication</span>
-                <span className="text-[8.5px] font-black bg-white/20 px-1.5 py-0.5 rounded">5K outlets / 4K users</span>
+                <span className="text-[8.5px] font-black bg-white/20 px-1.5 py-0.5 rounded">5K outlets / 15K users</span>
               </div>
             </div>
           </div>

@@ -125,19 +125,19 @@ export default function FinancialMilestones() {
 
             <div className="my-4 grid grid-cols-3 gap-1 text-center bg-slate-50 rounded-xl p-3 border border-slate-100/50">
               <div>
-                <span className="block text-[13.5px] font-black text-slate-700">₹90K/mo</span>
+                <span className="block text-[13.5px] font-black text-slate-700">₹2.25L/mo</span>
                 <span className="block text-[8.5px] font-extrabold text-slate-450 uppercase mt-0.5">Current</span>
-                <span className="block text-[7.5px] font-bold text-slate-400 mt-0.5">Annual Run: ₹10.8L</span>
+                <span className="block text-[7.5px] font-bold text-slate-400 mt-0.5">Annual Run: ₹27L</span>
               </div>
               <div className="border-x border-slate-200/60">
-                <span className="block text-[13.5px] font-black text-[#e85c1c]">₹7.5L/mo</span>
+                <span className="block text-[13.5px] font-black text-[#e85c1c]">₹22.5L/mo</span>
                 <span className="block text-[8.5px] font-extrabold text-[#e85c1c] uppercase mt-0.5">6 Months</span>
-                <span className="block text-[7.5px] font-bold text-[#e85c1c]/70 mt-0.5">Annual Run: ₹90L</span>
+                <span className="block text-[7.5px] font-bold text-[#e85c1c]/70 mt-0.5">Annual Run: ₹2.7Cr</span>
               </div>
               <div>
-                <span className="block text-[13.5px] font-black text-[#006363]">₹30L+/mo</span>
+                <span className="block text-[13.5px] font-black text-[#006363]">₹45L+/mo</span>
                 <span className="block text-[8.5px] font-extrabold text-[#006363] uppercase mt-0.5">12 Months</span>
-                <span className="block text-[7.5px] font-bold text-[#006363]/70 mt-0.5">Annual Run: ₹3.6Cr+</span>
+                <span className="block text-[7.5px] font-bold text-[#006363]/70 mt-0.5">Annual Run: ₹5.4Cr+</span>
               </div>
             </div>
 
@@ -164,17 +164,17 @@ export default function FinancialMilestones() {
 
             <div className="my-4 grid grid-cols-3 gap-2 text-center bg-slate-50 rounded-xl p-3 border border-slate-100/50">
               <div>
-                <span className="block text-[13.5px] font-black text-slate-700">15+</span>
+                <span className="block text-[13.5px] font-black text-slate-700">50+</span>
                 <span className="block text-[8.5px] font-extrabold text-slate-450 uppercase mt-0.5">Current</span>
                 <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Orders/day</span>
               </div>
               <div className="border-x border-slate-200/60">
-                <span className="block text-[13.5px] font-black text-[#e85c1c]">150+</span>
+                <span className="block text-[13.5px] font-black text-[#e85c1c]">500+</span>
                 <span className="block text-[8.5px] font-extrabold text-[#e85c1c] uppercase mt-0.5">6 Months</span>
                 <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Orders/day</span>
               </div>
               <div>
-                <span className="block text-[13.5px] font-black text-[#006363]">500+</span>
+                <span className="block text-[13.5px] font-black text-[#006363]">1,000+</span>
                 <span className="block text-[8.5px] font-extrabold text-[#006363] uppercase mt-0.5">12 Months</span>
                 <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Orders/day</span>
               </div>
@@ -203,19 +203,19 @@ export default function FinancialMilestones() {
 
             <div className="my-4 grid grid-cols-3 gap-2 text-center bg-slate-50 rounded-xl p-3 border border-slate-100/50">
               <div>
-                <span className="block text-[13.5px] font-black text-slate-700">200+</span>
+                <span className="block text-[13.5px] font-black text-slate-700">300+</span>
                 <span className="block text-[8.5px] font-extrabold text-slate-450 uppercase mt-0.5">Current</span>
-                <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Shopkeepers</span>
+                <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Users</span>
               </div>
               <div className="border-x border-slate-200/60">
-                <span className="block text-[13.5px] font-black text-[#e85c1c]">3,000+</span>
+                <span className="block text-[13.5px] font-black text-[#e85c1c]">4,500+</span>
                 <span className="block text-[8.5px] font-extrabold text-[#e85c1c] uppercase mt-0.5">6 Months</span>
-                <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Shopkeepers</span>
+                <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Users</span>
               </div>
               <div>
-                <span className="block text-[13.5px] font-black text-[#006363]">6,000+</span>
+                <span className="block text-[13.5px] font-black text-[#006363]">15,000+</span>
                 <span className="block text-[8.5px] font-extrabold text-[#006363] uppercase mt-0.5">12 Months</span>
-                <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Shopkeepers</span>
+                <span className="block text-[8px] font-bold text-slate-400 mt-0.5">Users</span>
               </div>
             </div>
 
