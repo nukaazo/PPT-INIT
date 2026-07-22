@@ -99,7 +99,7 @@ export default function GrowthSignals() {
                 </div>
               </div>
               <div className="text-2xl font-extrabold text-slate-900 tracking-tight font-title">
-                ₹3,000+
+                ₹5,000+
               </div>
               <h4 className="font-extrabold text-slate-800 text-xs mb-1">
                 Daily Sales
@@ -261,7 +261,7 @@ export default function GrowthSignals() {
                   </div>
                 </div>
                 <div className="text-2xl font-extrabold text-slate-900 tracking-tight font-title">
-                  15+
+                  50+
                 </div>
                 <h4 className="font-extrabold text-slate-800 text-xs mb-1">
                   Daily Orders

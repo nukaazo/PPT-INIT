@@ -8,7 +8,8 @@ import {
   FaBrain,
   FaMapMarkedAlt,
   FaDatabase,
-  FaTachometerAlt
+  FaTachometerAlt,
+  FaChartLine
 } from 'react-icons/fa';
 
 /* ─── Data ────────────────────────────────────────────── */
@@ -76,6 +77,18 @@ const advisors = [
       <span><strong>Batch computation expert</strong> — reduced processing latency by <strong>93%</strong></span>,
     ],
   },
+  {
+    initials: 'AB',
+    name: 'Ayushi Bhansali',
+    role: 'Advisor',
+    edu: 'B.E. · Comp. Eng. · Thapar Institute',
+    icon: FaChartLine,
+    accent: '#e85c1c',
+    points: [
+      <span>Growth Manager in <strong>Founder's Office at CapGrid</strong></span>,
+      <span>Ex-Analyst Intern at <strong>Bain &amp; Company</strong> (B2B growth modeling &amp; strategy)</span>,
+    ],
+  },
 ];
 
 /* ─── Column Header ────────────────────────────────────── */
@@ -83,7 +96,7 @@ function ColumnHeader({ title, subtitle, icon: Icon, accent }) {
   return (
     <div className="flex items-center gap-2.5 mb-4 select-none relative z-10">
       <div
-        className="w-7 h-7 rounded-lg flex items-center justify-center border"
+        className="w-7 h-7 rounded-lg flex items-center justify-center border shrink-0"
         style={{
           color: accent,
           backgroundColor: `${accent}12`,
@@ -107,7 +120,7 @@ function ColumnHeader({ title, subtitle, icon: Icon, accent }) {
 function TeamCard({ initials, name, role, edu, points, icon: Icon, accent }) {
   return (
     <div
-      className="flex gap-4 bg-white/80 backdrop-blur-md rounded-xl p-4.5 border border-slate-200/50 hover:border-slate-300 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 relative group overflow-hidden"
+      className="flex gap-4 bg-white/80 backdrop-blur-md rounded-xl p-3.5 border border-slate-200/50 hover:border-slate-300 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 relative group overflow-hidden"
     >
       {/* Decorative top-right gradient arc pattern */}
       <div
@@ -236,17 +249,17 @@ export default function Team() {
         <div className="grid grid-cols-12 gap-6 items-stretch">
 
           {/* Column 1: Founding Leadership */}
-          <div className="col-span-5 flex flex-col justify-between">
+          <div className="col-span-5 flex flex-col justify-center gap-5">
             <ColumnHeader title="Founding Leadership" subtitle="Core Vision &amp; Execution" icon={FaUsers} accent="#006363" />
-            <div className="flex-1 flex flex-col justify-center gap-5">
+            <div className="flex flex-col gap-4">
               {founders.map((f) => <TeamCard key={f.initials} {...f} />)}
             </div>
           </div>
 
           {/* Column 2: Advisory Board */}
-          <div className="col-span-7 border-l border-slate-200/40 pl-6 flex flex-col justify-between">
+          <div className="col-span-7 border-l border-slate-200/40 pl-6 flex flex-col justify-center gap-4">
             <ColumnHeader title="Advisory Board" subtitle="Strategic Domain Experts" icon={FaLightbulb} accent="#e85c1c" />
-            <div className="flex-1 flex flex-col justify-center gap-4">
+            <div className="flex flex-col gap-2.5">
               {advisors.map((a) => <TeamCard key={a.initials} {...a} />)}
             </div>
           </div>
