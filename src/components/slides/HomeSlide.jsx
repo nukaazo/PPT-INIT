@@ -29,9 +29,9 @@ export default function HomeSlide() {
             <span className="text-[#006363]">zo</span>
           </p>
         </div>
-        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100/60 px-3 py-1 rounded-full border border-slate-200/40">
+        {/* <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100/60 px-3 py-1 rounded-full border border-slate-200/40">
           Investor Pitch Deck
-        </div>
+        </div> */}
       </div>
 
       {/* ── Main Content Grid ── */}
