@@ -57,13 +57,18 @@ export default function HomeSlide() {
             {/* Core Pillars / Standard Icons */}
             <div className="flex flex-col gap-3.5 mt-2">
 
-              <div className="flex gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#e85c1c]/10 flex items-center justify-center flex-shrink-0">
+              <div className="flex gap-3 relative group bg-gradient-to-r from-orange-500/[0.04] to-transparent border-l-4 border-[#e85c1c] p-3.5 rounded-r-xl shadow-[0_2px_12px_rgba(232,92,28,0.02)]">
+                <div className="w-8 h-8 rounded-lg bg-[#e85c1c]/20 text-[#e85c1c] flex items-center justify-center flex-shrink-0 ring-2 ring-[#e85c1c]/20 shadow-sm shadow-[#e85c1c]/10">
                   <FaStore className="text-[#e85c1c]" size={14} />
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="text-xs font-bold text-slate-800">Local Business Digitalization</h3>
-                  <p className="text-[11px] text-slate-400 font-medium">Zero-friction onboarding to list neighborhood shops online.</p>
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="text-xs font-black text-slate-900">Local Business Digitalization</h3>
+                    <span className="text-[8px] font-extrabold text-[#e85c1c] bg-[#e85c1c]/20 border border-[#e85c1c]/30 px-1.5 py-0.5 rounded uppercase tracking-wider animate-pulse">
+                      Primary Leaf Node Focus
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 font-semibold leading-relaxed mt-0.5">Zero-friction onboarding to digitize traditional shops (the retail leaf nodes).</p>
                 </div>
               </div>
 
@@ -105,17 +110,21 @@ export default function HomeSlide() {
           <div className="col-span-6 flex items-center justify-center relative pl-4">
 
             <div className="relative w-full max-w-[440px] h-[320px] flex items-center justify-start">
+              
+              {/* Glowing background aura behind the leaf node */}
+              <div className="absolute top-1/2 left-[150px] -translate-x-1/2 -translate-y-1/2 w-[340px] h-[320px] bg-gradient-to-r from-[#e85c1c]/15 to-[#006363]/5 rounded-full filter blur-3xl opacity-60 z-0 pointer-events-none animate-pulse"></div>
 
               {/* Kirana Store Storefront Image Card */}
-              <div className="w-[300px] h-[280px] rounded-2xl overflow-hidden shadow-xl border border-slate-200/50 bg-white relative z-10">
+              <div className="w-[300px] h-[280px] rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(232,92,28,0.18)] border-3 border-[#e85c1c] bg-white relative z-10 hover:shadow-[0_20px_50px_rgba(232,92,28,0.25)] transition-all duration-300">
                 <img
                   src={kiranaStoreImg}
                   alt="Traditional Indian Kirana Store storefront"
                   className="w-full h-full object-cover"
                 />
-                {/* Subtle caption badge */}
-                <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm border border-slate-100 rounded-lg px-2.5 py-1 text-[9px] font-bold text-slate-700 shadow-sm">
-                  Digitizing Traditional Retail
+                {/* Highlighted caption badge */}
+                <div className="absolute bottom-3.5 left-3.5 bg-gradient-to-r from-white to-orange-50/95 backdrop-blur-md border-2 border-[#e85c1c]/45 rounded-xl px-3 py-1.5 text-[9.5px] font-black text-slate-800 shadow-lg flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#e85c1c] shadow-[0_0_8px_#e85c1c] animate-pulse"></span>
+                  <span>RETAIL LEAF NODE</span>
                 </div>
               </div>
 

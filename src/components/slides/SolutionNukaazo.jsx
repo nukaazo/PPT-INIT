@@ -385,12 +385,18 @@ export default function SolutionNukaazo() {
 
         </div>
 
-        {/* ── Conclusion Statement (The Bridge Foundation) ── */}
-        <div className="bg-gradient-to-br from-[#e85c1c]/5 to-[#006363]/5 border-t-[3px] border-[#006363] p-4 rounded-r-xl max-w-4xl mx-auto w-full text-center mt-2">
-          <p className="text-slate-700 text-xs md:text-sm font-bold leading-relaxed">
-            Nukaazo is building the missing bridge between consumers seeking trusted local options and businesses seeking digital demand —{' '}
-            <span className="text-[#006363] font-black uppercase tracking-wide">
-              creating a unified local Ecommerce ecosystem.
+        {/* ── Strategic Differentiator (Moat) ── */}
+        <div className="bg-gradient-to-r from-[#e85c1c]/[0.05] via-white to-[#006363]/[0.04] border-l-4 border-[#e85c1c] border-r-4 border-[#006363] border-t border-b border-slate-200/60 p-4 rounded-xl max-w-4xl mx-auto w-full text-center mt-2 shadow-[0_10px_30px_rgba(232,92,28,0.06)] hover:shadow-[0_15px_40px_rgba(232,92,28,0.1)] transition-all duration-300 relative group">
+          {/* Subtle glowing ring badge */}
+          <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#e85c1c] to-[#006363] text-white text-[9px] font-black tracking-widest px-3.5 py-1 rounded-full uppercase mb-2.5 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+            <span>Why We Win: Our Strategic Moat</span>
+          </div>
+          
+          <p className="text-slate-800 text-xs md:text-sm font-extrabold leading-relaxed px-4">
+            Nukaazo's focus on the local shop <span className="text-[#006363] font-black">"leaf nodes"</span> represents a structural <span className="text-[#e85c1c] font-black">product-based ecosystem approach</span>, not a service model.
+            <span className="block text-[11px] md:text-[12px] text-slate-500 font-semibold mt-1.5 leading-relaxed italic">
+              "No other competitor digitizes down to this atomic level. This pure product play is what makes us totally different and enables long-term market control."
             </span>
           </p>
         </div>
