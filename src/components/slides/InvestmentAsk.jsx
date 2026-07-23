@@ -59,7 +59,7 @@ export default function InvestmentAsk() {
             Funding Request & Capital Allocation
           </h2>
           <p className="text-slate-500 mt-1 max-w-3xl text-[13px] font-medium">
-            Funding requirement of ₹5 Crore to execute multi-city expansion, launch dark store micro-fulfillment centers, scale field forces, and refine predictive AI models.
+            Capital requirement of ₹5 Crore for Phase 1 (Single Region Pilot) to establish local micro-fulfillment hubs, scaling to ₹50 Crore for Phase 2 (City-wide Pune Expansion).
           </p>
         </div>
       </div>
@@ -75,39 +75,70 @@ export default function InvestmentAsk() {
                 <FaCoins size={14} />
               </div>
               <div>
-                <h4 className="text-[14px] font-black text-slate-800 leading-tight">Seed Investment Ask</h4>
-                <span className="text-[8px] font-extrabold uppercase text-[#e85c1c] tracking-wider">12-Month Runway</span>
+                <h4 className="text-[14px] font-black text-slate-800 leading-tight">Investment Ask</h4>
+                <span className="text-[8px] font-extrabold uppercase text-[#e85c1c] tracking-wider">Phase 1 & Phase 2</span>
               </div>
             </div>
 
-            {/* Giant Ask Number */}
-            <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 my-4 text-center">
-              <span className="block text-[34px] font-black text-slate-900 tracking-tight leading-none mb-1">
-                ₹5 Crore
-              </span>
-              <span className="block text-[9.5px] font-extrabold text-slate-400 uppercase tracking-widest">
-                Seed Funding Request
-              </span>
+            {/* Dual Capital Ask Cards */}
+            <div className="flex flex-col gap-2.5 my-3">
+              <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex justify-between items-center hover:border-[#e85c1c]/30 transition-colors">
+                <div>
+                  <span className="block text-[8px] font-extrabold text-slate-400 uppercase tracking-widest leading-none mb-1">
+                    PHASE 1 · SINGLE REGION
+                  </span>
+                  <span className="block text-[10px] font-semibold text-slate-500">
+                    Kothrud / Baner Pilot
+                  </span>
+                </div>
+                <div className="text-right">
+                  <span className="block text-[18px] font-black text-slate-900 leading-none">
+                    ₹5 Cr
+                  </span>
+                  <span className="block text-[8px] font-bold text-[#e85c1c] uppercase tracking-wider mt-0.5">
+                    12-Mo Runway
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex justify-between items-center hover:border-[#006363]/30 transition-colors">
+                <div>
+                  <span className="block text-[8px] font-extrabold text-slate-400 uppercase tracking-widest leading-none mb-1">
+                    PHASE 2 · ALL PUNE AREA
+                  </span>
+                  <span className="block text-[10px] font-semibold text-slate-500">
+                    City-Wide (10+ Hubs)
+                  </span>
+                </div>
+                <div className="text-right">
+                  <span className="block text-[18px] font-black text-[#006363] leading-none">
+                    ₹50 Cr
+                  </span>
+                  <span className="block text-[8px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">
+                    Scaling Phase
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Target Goals for this Funding */}
-            <h5 className="text-[11.5px] font-bold text-slate-800 mb-2 uppercase tracking-wide">Key Goals in 12 Months:</h5>
+            <h5 className="text-[11.5px] font-bold text-slate-800 mb-2 uppercase tracking-wide">Key Scaling Goals (Pilot / Pune):</h5>
             <ul className="space-y-2.5">
               <li className="flex items-start gap-2 text-[11px] font-semibold text-slate-650">
                 <FaCheckCircle className="text-[#006363] mt-0.5 shrink-0" size={12} />
-                <span>Onboard <strong>5,000+ active outlets</strong></span>
+                <span>Onboard <strong>500 / 5,000+ outlets</strong></span>
               </li>
               <li className="flex items-start gap-2 text-[11px] font-semibold text-slate-650">
                 <FaCheckCircle className="text-[#006363] mt-0.5 shrink-0" size={12} />
-                <span>Acquire <strong>15,000+ active users</strong></span>
+                <span>Acquire <strong>1,500 / 15,000+ users</strong></span>
               </li>
               <li className="flex items-start gap-2 text-[11px] font-semibold text-slate-650">
                 <FaCheckCircle className="text-[#006363] mt-0.5 shrink-0" size={12} />
-                <span>Reach <strong>₹45L+ Monthly GMV Run Rate</strong></span>
+                <span>Reach <strong>₹4.5L / ₹45L+ Monthly GMV</strong></span>
               </li>
               <li className="flex items-start gap-2 text-[11px] font-semibold text-slate-650">
                 <FaCheckCircle className="text-[#006363] mt-0.5 shrink-0" size={12} />
-                <span>Establish <strong>5-7 local Dark Store Hubs</strong></span>
+                <span>Establish <strong>2 / 20 Dark Store Hubs</strong></span>
               </li>
             </ul>
           </div>
@@ -138,8 +169,8 @@ export default function InvestmentAsk() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="block text-[13px] font-black text-orange-600">₹1.75 Cr</span>
-                  <span className="block text-[7.5px] font-extrabold uppercase text-slate-400">35% Share</span>
+                  <span className="block text-[13px] font-black text-orange-600">₹1.75 Cr <span className="text-slate-400 font-medium text-[9px]">/ ₹17.5 Cr</span></span>
+                  <span className="block text-[7.5px] font-extrabold uppercase text-slate-400">35% Share (Pilot / Pune)</span>
                 </div>
               </div>
               <p className="text-[10px] text-slate-500 font-medium leading-normal mt-2.5">
@@ -160,8 +191,8 @@ export default function InvestmentAsk() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="block text-[13px] font-black text-amber-600">₹1.25 Cr</span>
-                  <span className="block text-[7.5px] font-extrabold uppercase text-slate-400">25% Share</span>
+                  <span className="block text-[13px] font-black text-amber-600">₹1.25 Cr <span className="text-slate-400 font-medium text-[9px]">/ ₹12.5 Cr</span></span>
+                  <span className="block text-[7.5px] font-extrabold uppercase text-slate-400">25% Share (Pilot / Pune)</span>
                 </div>
               </div>
               <p className="text-[10px] text-slate-500 font-medium leading-normal mt-2.5">
@@ -182,8 +213,8 @@ export default function InvestmentAsk() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="block text-[13px] font-black text-[#006363]">₹1.00 Cr</span>
-                  <span className="block text-[7.5px] font-extrabold uppercase text-slate-400">20% Share</span>
+                  <span className="block text-[13px] font-black text-[#006363]">₹1.00 Cr <span className="text-slate-400 font-medium text-[9px]">/ ₹10.0 Cr</span></span>
+                  <span className="block text-[7.5px] font-extrabold uppercase text-slate-400">20% Share (Pilot / Pune)</span>
                 </div>
               </div>
               <p className="text-[10px] text-slate-500 font-medium leading-normal mt-2.5">
@@ -204,12 +235,12 @@ export default function InvestmentAsk() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="block text-[13px] font-black text-indigo-600">₹1.00 Cr</span>
-                  <span className="block text-[7.5px] font-extrabold uppercase text-slate-400">20% Share</span>
+                  <span className="block text-[13px] font-black text-indigo-600">₹1.00 Cr <span className="text-slate-400 font-medium text-[9px]">/ ₹10.0 Cr</span></span>
+                  <span className="block text-[7.5px] font-extrabold uppercase text-slate-400">20% Share (Pilot / Pune)</span>
                 </div>
               </div>
               <p className="text-[10px] text-slate-500 font-medium leading-normal mt-2.5">
-                Core development team salaries (₹75L) to scale predictive AI models, and AWS infrastructure/deployment hosting costs (₹25L) for real-time telemetry.
+                Core development salaries (₹75L / ₹7.5 Cr) to scale predictive AI models, and AWS server/hosting infrastructure (₹25L / ₹2.5 Cr) for telemetry.
               </p>
             </div>
 
@@ -223,7 +254,7 @@ export default function InvestmentAsk() {
                 Capital Justification & Unit Economics Leverage
               </p>
               <p className="text-[10px] text-slate-500 font-medium mt-0.5 leading-relaxed">
-                By onboarding 2,000 outlets in the first 6 months, we secure the store density needed for profitable brand campaigns. The shared representative model reduces brand representative costs by 60%, fueling high margins. Setting up localized Dark Stores cuts logistics transit to under 2 hours, boosting retention and proving a scalable model before multi-region replication.
+                By onboarding 500 outlets in our pilot region, we secure the local store density needed for profitable campaigns. Scaling to 5,000 outlets across the entire Pune area reduces representative costs by 60%, fueling high margins. Localized dark stores cut delivery transit to under 2 hours, boosting retention and proving a scalable playbook before multi-region replication.
               </p>
             </div>
           </div>
