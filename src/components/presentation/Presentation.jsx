@@ -30,7 +30,8 @@ const slideTitles = {
   GrowthRoadmap: 'Growth Roadmap & Milestones',
   FinancialMilestones: 'Projections & Growth Milestones',
   Team: 'Who We Are',
-  InvestmentAsk: 'Funding & Capital Ask'
+  InvestmentAsk: 'Funding & Capital Ask',
+  SocialLinks: 'Connect With Us'
 };
 
 export default function Presentation({ slides = [], onExit }) {

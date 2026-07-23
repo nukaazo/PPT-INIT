@@ -14,6 +14,7 @@ import FinancialMilestones from './components/slides/FinancialMilestones';
 import Team from './components/slides/Team';
 import InvestmentAsk from './components/slides/InvestmentAsk';
 import HomeSlide from './components/slides/HomeSlide';
+import SocialLinks from './components/slides/SocialLinks';
 
 function App() {
   const [view, setView] = useState('welcome');
@@ -31,7 +32,8 @@ function App() {
     NukaazoProxy,
     GrowthRoadmap,
     FinancialMilestones,
-    InvestmentAsk
+    InvestmentAsk,
+    SocialLinks
   ];
 
 
